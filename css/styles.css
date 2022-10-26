@@ -1,0 +1,140 @@
+:root {
+  --fontPrimary: "Courier New", Courier, monospace;
+
+  /* cores */
+  --primaryColer: rgb(228, 255, 26);
+  --secondColer: rgb(248, 241, 255);
+  --thirdColer: rgb(255, 127, 17);
+
+  /* Trasition timer */
+  --transition: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* alinhamento da pagina */
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Deixando o nav fixo na tela para rolagem */
+nav {
+  width: 100%;
+  padding: 10px;
+
+  box-shadow: 2px 2px 10px #ccc, -2px 0 10px#ccc;
+}
+
+/* centralizando o conteúdo da nav */
+nav .nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* zerando os estilo das lista e links */
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+ul li {
+  margin: 0 5px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Toggle */
+
+
+
+.links li a {
+  position: relative;
+  padding: 10px 5px;
+  font-size: 2rem;
+  font-family: var(--fontPrimary);
+}
+
+a:hover {
+  color: var(--thirdColer);
+}
+
+.links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--thirdColer);
+  transition: 0.5s;
+}
+
+.links li a:hover::after {
+  width: 100%;
+}
+
+/* Estilando a logo */
+
+.logo {
+  font-size: 2rem;
+  font-family: var(--fontPrimary);
+  line-height: 0;
+}
+
+.description {
+  font-size: 1.3rem;
+  font-family: var(--fontPrimary);
+  line-height: 1;
+  margin-left: 2rem;
+}
+
+span {
+  color: var(--thirdColer);
+}
+
+/* hidden toggle */
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+    .links {
+        height: 0;
+       overflow: hidden;
+       transition: var(--transition);
+     }
+     .show-links {
+       height: 10rem;
+     }
+     
+
+
+  .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: contents;
+    visibility: visible;
+    font-size: 3rem;
+  }
+}
